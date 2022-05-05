@@ -33,8 +33,8 @@ public class ClienteService {
         rep.deleteById(id);
     }
 
-    public void insCliente(String nome){
-        rep.save(new Cliente(nome));
+    public Cliente insCliente(String nome){
+        return rep.save(new Cliente(nome));
     }
 }
 
