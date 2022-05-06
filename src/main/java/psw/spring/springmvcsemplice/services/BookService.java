@@ -1,6 +1,6 @@
 package psw.spring.springmvcsemplice.services;
 
-import com.sun.istack.internal.NotNull;
+import com.sun.istack.NotNull;
 import org.springframework.stereotype.Service;
 import psw.spring.springmvcsemplice.entities.Book;
 

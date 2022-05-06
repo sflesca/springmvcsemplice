@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript">
+    function raddoppia(n) {
+      var res = 2 * n;
+      alert("Il doppio di " + n + " è " + res);
+    }
+
+    function readText (form) {
+        t = form.inputbox.value;
+        alert ("Hai scritto: " + t);
+    }
+    function writeText (form) {
+        form.inputbox.value = "prova";
+    }
+
+    function cambiaDiv(){
+        d = document.getElementById("d");
+        d.innerHTML  = "<ul><li>Lista!</li></ul>"
+    }
+  </script>
+</head>
+<body onload="raddoppia(7)">
+<p onclick="cambiaDiv()">cliaccami</p>ciao
+<FORM NAME="myform" ACTION="" METHOD="GET">
+    Enter something in the box: <BR>
+    <INPUT TYPE="text" NAME="inputbox" VALUE="">
+    <INPUT TYPE="button" NAME="button1" Value="Read" onclick="readText(this.form)">
+    <INPUT TYPE="button" NAME="button2" Value="Write" onclick="writeText(this.form)" />
+</FORM>
+
+<div id="d"><p>Paragrafo!</p></div>
+</body>
+</html>
