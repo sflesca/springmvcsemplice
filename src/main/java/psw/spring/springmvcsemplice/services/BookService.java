@@ -1,26 +1,29 @@
 package psw.spring.springmvcsemplice.services;
 
 import com.sun.istack.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import psw.spring.springmvcsemplice.entities.Book;
+import psw.spring.springmvcsemplice.repositories.BookRepository;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
+@Transactional
 public class BookService {
-    private ArrayList<Book> books = new ArrayList<>();
+    @Autowired
+    BookRepository rep;
 
-    public BookService() {
-        books.add(new Book(0,"Primo Libro","Io",9.99));
-        books.add(new Book(1,"Secondo Libro","Tu",6.99));
-    }
 
     public List<Book> getBooks(){
-        return books;
+        return rep.findAll();
     }
 
+    public Optional<Book> getBook(long id){ return rep.findById(id);}
+
     public void addBook(@NotNull Book b){
-        books.add(b);
+        rep.save(b);
     }
 }

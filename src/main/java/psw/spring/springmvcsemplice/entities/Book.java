@@ -5,12 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.*;
+
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
-    private int id;
+    @Id
+    @GeneratedValue
+    private long id;
     private String title;
     private String authors;
     private double price;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
